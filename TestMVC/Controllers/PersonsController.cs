@@ -1,10 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Runtime.InteropServices.JavaScript;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+using System.Security.Cryptography;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TestMVC.Context;
@@ -14,11 +8,11 @@ namespace TestMVC.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PersonController : ControllerBase
+    public class PersonsController : ControllerBase
     {
         private readonly MyDbContext _context;
 
-        public PersonController(MyDbContext context)
+        public PersonsController(MyDbContext context)
         {
             _context = context;
         }
@@ -52,6 +46,20 @@ namespace TestMVC.Controllers
             {
                 return false;
             }
+        }
+
+        [HttpPost]
+        public async Task AddPerson(Person person)
+        {
+            await _context.Persons.AddAsync(person);
+            await _context.SaveChangesAsync();
+        }
+
+        [HttpPut]
+        public async Task UpdatePerson(Person person)
+        {
+            _context.Persons.Update(person);
+            await _context.SaveChangesAsync();
         }
     }
 }
