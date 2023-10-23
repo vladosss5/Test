@@ -16,9 +16,7 @@ namespace TestMVC.Controllers
     [ApiController]
     public class PersonController : ControllerBase
     {
-        
         private readonly MyDbContext _context;
-        private MyDbContext db = new MyDbContext();
 
         public PersonController(MyDbContext context)
         {
