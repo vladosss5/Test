@@ -10,6 +10,7 @@ public partial class PersonSkill
     public int IdSkill { get; set; }
 
     public int IdPerson { get; set; }
+    public byte Level { get; set; } = 1;
 
     public virtual Person IdPersonNavigation { get; set; } = null!;
 

@@ -43,6 +43,8 @@ public partial class MyDbContext : DbContext
             entity.ToTable("PersonSkill");
 
             entity.Property(e => e.IdList).UseIdentityAlwaysColumn();
+            
+            entity.Property(e => e.Level);
 
             entity.HasOne(d => d.IdPersonNavigation).WithMany(p => p.PersonSkills)
                 .HasForeignKey(d => d.IdPerson)

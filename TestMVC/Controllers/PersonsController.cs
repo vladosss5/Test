@@ -49,17 +49,21 @@ namespace TestMVC.Controllers
         }
 
         [HttpPost]
-        public async Task AddPerson(Person person)
+        public async Task<ActionResult<List<Person>>> AddPerson(Person person)
         {
             await _context.Persons.AddAsync(person);
             await _context.SaveChangesAsync();
+
+            return Ok(person);
         }
 
         [HttpPut]
-        public async Task UpdatePerson(Person person)
+        public async Task<ActionResult<List<Person>>> UpdatePerson(Person person)
         {
             _context.Persons.Update(person);
             await _context.SaveChangesAsync();
+
+            return Ok(person);
         }
     }
 }
