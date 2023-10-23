@@ -1,5 +1,7 @@
+using System.Configuration;
 using Microsoft.EntityFrameworkCore;
 using TestMVC.Context;
+using TestMVC.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,10 +22,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
 app.MapControllers();
+
+// app.MapGet("/", (MyDbContext db) => db.Persons.ToList());
 
 app.Run();
