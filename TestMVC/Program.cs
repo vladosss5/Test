@@ -24,6 +24,4 @@ if (app.Environment.IsDevelopment())
 
 app.MapControllers();
 
-// app.MapGet("/", (MyDbContext db) => db.Persons.ToList());
-
 app.Run();

@@ -18,52 +18,71 @@ namespace TestMVC.Controllers
         }
         
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Person>>> GetPersons()
+        public async Task<ActionResult<List<Person>>> GetPersons()
         {
             return await _context.Persons.ToListAsync();
         }
 
         [HttpGet("id")]
-        public async Task<Person> getId(int id)
+        public async Task<ActionResult<Person>> GetPersonById(int id)
         {
-            IEnumerable<Person> persons = await _context.Persons.ToListAsync();
-            
-            return persons.Where(p => p.IdPerson == id).FirstOrDefault();
-        }
+            Person SelectPerson = _context.Persons.Where(p => p.IdPerson == id).FirstOrDefault();
 
-        [HttpDelete("id")]
-        public bool DeletePerson(int id)
-        {
-            Person person = _context.Persons.Where(p => p.IdPerson == id).FirstOrDefault();
-            _context.Persons.Remove(person);
-            _context.SaveChanges();
-            
-            if (_context.Persons.Where(p => p.IdPerson == person.IdPerson).FirstOrDefault() == null)
+            if (SelectPerson != null)
             {
-                return true;
+                return SelectPerson;
             }
             else
             {
-                return false;
+                return NotFound("Пользователь не найден");
+            }
+        }
+
+        [HttpDelete("id")]
+        public async Task<ActionResult> DeletePerson(int id)
+        {
+            try
+            {
+                Person person = _context.Persons.Where(p => p.IdPerson == id).FirstOrDefault();
+                _context.Persons.Remove(person);
+                _context.SaveChanges();
+                return Ok("Пользователь удалён");
+            }
+            catch (Exception e)
+            {
+                return NotFound("Пользователь не найден");
             }
         }
 
         [HttpPost]
         public async Task<ActionResult<List<Person>>> AddPerson(Person person)
         {
-            await _context.Persons.AddAsync(person);
-            await _context.SaveChangesAsync();
-
-            return Ok(person);
+            try
+            {
+                await _context.Persons.AddAsync(person);
+                await _context.SaveChangesAsync();
+                return Ok($"Пользователь {person.DisplayName} добавлен");
+            }
+            catch (Exception e)
+            {
+                return BadRequest("Неверно указан пользователь");
+            }
         }
 
         [HttpPut]
         public async Task<ActionResult<List<Person>>> UpdatePerson(Person person)
         {
-            _context.Persons.Update(person);
-            await _context.SaveChangesAsync();
-
-            return Ok(person);
+            try
+            {
+                _context.Persons.Update(person);
+                await _context.SaveChangesAsync();
+                return Ok(person);
+            }
+            catch (Exception e)
+            {
+                return BadRequest("Неверно указан пользователь");
+            }
+            
         }
     }
 }
