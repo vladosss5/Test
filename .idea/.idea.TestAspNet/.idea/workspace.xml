@@ -9,7 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0cfa614-c00f-4fde-a95d-b316bdb67386" name="Changes" comment="" />
+    <list default="true" id="d0cfa614-c00f-4fde-a95d-b316bdb67386" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/TestMVC/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TestAspNet/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TestAspNet/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -134,7 +137,7 @@
       <workItem from="1698143274769" duration="117000" />
       <workItem from="1698143416913" duration="5857000" />
       <workItem from="1698242919312" duration="2389000" />
-      <workItem from="1699829890395" duration="630000" />
+      <workItem from="1699829890395" duration="1615000" />
     </task>
     <servers />
   </component>
