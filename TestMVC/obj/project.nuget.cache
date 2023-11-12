@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WpTKz6mqQt981T/pFD+vm/aL4XuBpEOzTS2AlQRggS4qUgy9hS4UkFmTNBPwXwCb3/l2ufyiQxcjRO26dwgdGQ==",
+  "dgSpecHash": "3GammP/O23aAt3/HG16HdifS6Mu3kVbJQfURYQ1SsAG67BAkhQ3jwfhaB1oAhzrb6+YD4UirrgkqCQ3MLal/ew==",
   "success": true,
-  "projectFilePath": "C:\\Users\\V-pc\\Documents\\Работа\\Разработка\\TestAspNet\\TestMVC\\TestMVC.csproj",
+  "projectFilePath": "E:\\Работа\\Разработка\\TestAspNet\\TestMVC\\TestMVC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\V-pc\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\V-pc\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

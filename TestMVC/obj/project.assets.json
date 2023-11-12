@@ -10895,11 +10895,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\V-pc\\Documents\\Работа\\Разработка\\TestAspNet\\TestMVC\\TestMVC.csproj",
+      "projectUniqueName": "E:\\Работа\\Разработка\\TestAspNet\\TestMVC\\TestMVC.csproj",
       "projectName": "TestMVC",
-      "projectPath": "C:\\Users\\V-pc\\Documents\\Работа\\Разработка\\TestAspNet\\TestMVC\\TestMVC.csproj",
+      "projectPath": "E:\\Работа\\Разработка\\TestAspNet\\TestMVC\\TestMVC.csproj",
       "packagesPath": "C:\\Users\\V-pc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\V-pc\\Documents\\Работа\\Разработка\\TestAspNet\\TestMVC\\obj\\",
+      "outputPath": "E:\\Работа\\Разработка\\TestAspNet\\TestMVC\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\V-pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
